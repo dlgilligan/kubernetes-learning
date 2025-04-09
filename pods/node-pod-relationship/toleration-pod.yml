@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-toleration
+  labels:
+    app: myapp
+    type: frontend
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+
+  tolerations:
+    - key: "key1"
+      operator: "Equal"
+      value: "value1"
+      effect: "NoSchedule"
